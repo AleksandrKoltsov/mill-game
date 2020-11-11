@@ -1,0 +1,22 @@
+.score {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1C1C21;
+    opacity: 0.5;
+}
+.hand {
+    background-image: url("../assets/main/hand.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 400px;
+    height: 400px;
+}
+.price {
+    color: #1C1C21;
+    font-size: 56px;
+    font-weight: 600;
+}
+.startBtn {
+    cursor: pointer;
+}

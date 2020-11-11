@@ -1,0 +1,39 @@
+/*body {*/
+/*    background-color: #E5E5E5;*/
+/*}*/
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    height: 100vh;
+    background-color: #E5E5E5;
+}
+.question {
+    padding: 2rem 0 0 3rem;
+    width: 69.5vw;
+    min-height: 30vh;
+}
+.answers {
+    width: 70vw;
+    /*height: 40vh;*/
+    padding-bottom: 2rem;
+}
+.menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width:29vw;
+    background-color: white;
+    height: 100vh;
+}
+
+.button {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 0;
+    bottom: 0;
+    background: #FFFFFF;
+    border: 1px solid #D0D0D8;
+    box-sizing: border-box;
+}

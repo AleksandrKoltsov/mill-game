@@ -1,0 +1,21 @@
+.background {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 1rem;
+    padding: 0.3rem;
+}
+.activeContainer {
+    background-image: url("../assets/menu/activeElement.svg");
+    color: #FF8B37;
+}
+.inActiveContainer {
+    background-image: url("../assets/menu/inActiveElement.svg");
+    color: #D0D0D8;
+}
+.nextContainer {
+    background-image: url("../assets/menu/nextElement.svg");
+    color: #1C1C21;
+}

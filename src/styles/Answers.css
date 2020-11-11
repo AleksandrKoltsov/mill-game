@@ -1,0 +1,31 @@
+.button1 {
+    float: left;
+    width: 25rem;
+    margin: 2rem 0 0 2rem;
+    background-image: url("../assets/answers/btnInActive.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    text-align: center;
+    line-height: 72px;
+    font-size: 20px;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.button1:hover {
+    background-image: url("../assets/answers/btnHover.svg");
+}
+
+.button1:active {
+    background-image: url("../assets/answers/btnActive.svg");
+}
+
+.false {
+    background-image: url("../assets/answers/btnFalse.svg");
+}
+.true {
+    background-image: url("../assets/answers/btnTrue.svg");
+}
