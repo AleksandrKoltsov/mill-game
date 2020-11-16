@@ -1,39 +1,53 @@
-/*body {*/
-/*    background-color: #E5E5E5;*/
-/*}*/
+.container {
+    display: flex;
+}
 .board {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #E5E5E5;
 }
+/*=====question side=====*/
 .question {
     padding: 2rem 0 0 3rem;
-    width: 69.5vw;
     min-height: 30vh;
+    max-width: calc(100vw - 100px);
 }
+/*=====answers side=====*/
 .answers {
-    width: 70vw;
-    /*height: 40vh;*/
     padding-bottom: 2rem;
+    max-width: calc(100vw - 200px);
 }
+/*=====menu side=====*/
 .menu {
     position: absolute;
-    right: 0;
     top: 0;
-    width:29vw;
+    right: 0;
     background-color: white;
     height: 100vh;
+    padding: 0 0 1rem 0;
 }
-
-.button {
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    top: 0;
-    bottom: 0;
-    background: #FFFFFF;
-    border: 1px solid #D0D0D8;
-    box-sizing: border-box;
+.btnMenu {
+    position: fixed;
+    background-image: url("../assets/menu/btnMenu.svg");
+}
+.btnClose {
+    /*position: fixed;*/
+    margin: 1rem;
+    background-image: url("../assets/menu/btnClose.svg");
+}
+.hide {
+    display: none;
+}
+.bckgnd {
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    color: #1C1C21;
+    cursor: pointer;
 }

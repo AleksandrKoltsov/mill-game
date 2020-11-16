@@ -18,11 +18,6 @@ const Menu = ({data, price}) => {
                 item.classList.remove('activeContainer');
             }
         }
-        // console.log(typeof domElement);
-        // const elem = domElement.filter(el =>
-        //     el.innerText !== String(price)
-        // );
-        // console.log(elem);
     });
     return data.map(el => {
         return (

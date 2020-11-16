@@ -1,4 +1,4 @@
-import {INCREMENT_ITERATOR, GAME_OVER, SET_QUESTIONS, RESULT, GET_CONFIG} from "./types";
+import {INCREMENT_ITERATOR, GAME_OVER, SET_QUESTIONS, RESULT, GET_CONFIG, ISMENU} from "./types";
 import Data from '../data/gameConfig'
 
 const initialState = {
@@ -6,7 +6,8 @@ const initialState = {
     questions: [],
     iterator: 0,
     gameOver: false,
-    result: 0
+    result: 0,
+    isMenu: false
 };
 
 export const dataReducer = (state = initialState, action) => {
@@ -23,6 +24,8 @@ export const dataReducer = (state = initialState, action) => {
             return {...state, gameOver: action.payload};
         case RESULT:
             return {...state, result: action.payload};
+        case ISMENU:
+            return {...state, isMenu: action.payload};
         default: return state;
     }
 };

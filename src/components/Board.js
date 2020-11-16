@@ -1,22 +1,25 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {connect} from "react-redux";
-import {gameOver, setIncrement, result} from "../redux/actions";
+import {gameOver, setIncrement, result, isMenu} from "../redux/actions";
 import Menu from "./BoardComponents/Menu";
 import Answers from "./BoardComponents/Answers";
 import Question from "./BoardComponents/Question";
 import GameOver from "./GameOver";
 import '../styles/Board.css';
+import {Hidden} from "@material-ui/core";
 
 const Board = ({
-   arrAnswers,
-   i,
-   setIncrement,
-   end,
-   gameOver,
-   result,
-   price
+       arrAnswers,
+       i,
+       setIncrement,
+       end,
+       gameOver,
+       result,
+       price,
+       menu,
+       isMenu
 }) => {
-    //if array is't empty else return Error page
+    //if array is empty else return Error page
     if (arrAnswers.length > 0) {
         const item = {
             question: arrAnswers[i].question.title,
@@ -25,7 +28,7 @@ const Board = ({
             len: arrAnswers.length,
             true: arrAnswers[i].question.answers.filter(el => el.true)[0].true
         };
-        const renderPrice = [];
+        // const renderPrice = [];
         //getting answer in callback
         const handleClickAnswer = (response) => {
             if(response === item.true) {
@@ -50,23 +53,41 @@ const Board = ({
             )
         } else {
             return (
-                <div className='board'>
-                    <div className='question'>
-                        <Question
-                            data={item.question}
-                        />
+                <div className="container">
+                    <div className='board'>
+                        <div className='question'>
+                            <Question
+                                data={item.question}
+                            />
+                        </div>
+                        <div className='answers'>
+                            <Answers
+                                data={item.answ}
+                                callback={handleClickAnswer}
+                            />
+                        </div>
                     </div>
-                    <div className='answers'>
-                        <Answers
-                            data={item.answ}
-                            callback={handleClickAnswer}
-                        />
-                    </div>
-                    <div className='menu'>
-                        <Menu
-                            data={arrAnswers}
-                            price={price}
-                        />
+                    <div>
+                        <Hidden only={['xs', 'sm', 'md']}>
+                            <div className='menu'>
+                                <Hidden lgUp>
+                                    <div
+                                        className="btnClose bckgnd"
+                                        onClick={()=>isMenu(false)}
+                                    />
+                                </Hidden>
+                                <Menu
+                                    data={arrAnswers}
+                                    price={price}
+                                />
+                            </div>
+                        </Hidden>
+                        <Hidden lgUp>
+                            <div
+                                onClick={()=>isMenu(true)}
+                                className="btnMenu bckgnd"
+                            />
+                        </Hidden>
                     </div>
                 </div>
             )
@@ -79,12 +100,14 @@ const mapStateToProps = state => {
         arrAnswers: state.data.questions,
         i: state.data.iterator,
         end: state.data.gameOver,
-        price: state.data.result
+        price: state.data.result,
+        menu: state.data.isMenu
     }
 };
 const mapDispatchToProps = {
     setIncrement,
     gameOver,
-    result
+    result,
+    isMenu
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Board);

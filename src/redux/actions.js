@@ -1,4 +1,4 @@
-import {INCREMENT_ITERATOR, SET_QUESTIONS, GAME_OVER, RESULT, GET_CONFIG} from "./types";
+import {INCREMENT_ITERATOR, SET_QUESTIONS, GAME_OVER, RESULT, GET_CONFIG, ISMENU} from "./types";
 
 export const setQuestions = (data) => ({
     type: SET_QUESTIONS,
@@ -28,4 +28,11 @@ export const getConfig = data => {
         type: GET_CONFIG,
         payload: data
     }
-}
+};
+
+export const isMenu = data => {
+    return {
+        type: ISMENU,
+        payload: data
+    }
+};
